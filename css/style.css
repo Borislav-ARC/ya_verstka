@@ -1,0 +1,83 @@
+/* 1. First part*/
+body {
+    margin: 0;
+    padding: 0;
+}
+#content {
+    width: 702px;
+    margin: 0 auto;
+    padding: 0 45px;
+}
+ul {
+    list-style: none;
+}
+table, th, td {
+    border: 1px solid #000;
+}
+input {
+    margin-left: 0;
+}
+form ul {
+    padding-left: 0;
+}
+.quote {
+    white-space: pre;
+}
+
+/* 2.1 Second part - first attempt*/
+#rating {
+    width: 300px;
+    margin: 50px auto 0;
+}
+.first {
+    direction: rtl;
+    text-align: left;
+    margin-left: 20px;
+}
+.star-five {
+    background: url("../images/star.jpg");
+    width: 16px;
+    height: 16px;
+    margin-left: -2px;
+    display: inline-block;
+    cursor: pointer;
+}
+.star-five:hover,
+.star-five:hover ~ span {
+    background: url("../images/star_hover.jpg");
+}
+
+/* 2.2 Second part - second attempt*/
+.second {
+    margin-left: 20px;
+}
+fieldset {
+    border: 0;
+    padding: 0;
+}
+.rating {
+    float: left;
+}
+.rating:not(:checked) > input {
+    position: absolute;
+    left: -9999px;
+    clip: rect(0,0,0,0);
+}
+.rating:not(:checked) > label {
+    background: url('../images/star.png') no-repeat 0 -16px;
+}
+.rating label {
+    float: right;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    text-indent: -9999px;
+}
+.rating:not(:checked) > label:hover,
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label,
+.rating:not(:checked) > label:hover ~ label {
+    background: url('../images/star.png') no-repeat 0 0;
+}
