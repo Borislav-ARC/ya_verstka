@@ -61,7 +61,7 @@ fieldset {
 .rating:not(:checked) > input {
     position: absolute;
     left: -9999px;
-    clip: rect(0,0,0,0);
+    float: right;
 }
 .rating:not(:checked) > label {
     background: url('../images/star.png') no-repeat 0 -16px;
@@ -74,6 +74,7 @@ fieldset {
     cursor: pointer;
     text-indent: -9999px;
 }
+.rating > input:checked ~ label,
 .rating:not(:checked) > label:hover,
 .rating > input:checked + label:hover,
 .rating > input:checked + label:hover ~ label,
